@@ -13,10 +13,11 @@ a{
 	float: left;
 }
 
-.middle{
-	padding-top:40px;
+.middle{	
+	margin-left: 20%;
 	text-align:center;
-	height: 100%;
+	width: 60%;
+	height: 100%; 
 	background-color: rgb(153,217,234);
 }
 
