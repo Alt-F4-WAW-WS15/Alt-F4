@@ -3,6 +3,7 @@
 <head>
 	<title>Spieler anlegen</title>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+
 <head>
 <body>
 	<div class="left" id="side">
@@ -12,14 +13,13 @@
 		
 	</div>
 	<div class="middle">
-	<h1 id="playerHeader">Spieler anlegen</h1>
-	<form action?"http://martinakraus.net/createPlayer.php" 
-	method="get">
-		<table>
+	<h2 id="playerHeader">Spieler anlegen</h2>
+	<form name"sendIt" action="http://martinakraus.net/createPlayer.php" method="GET">
+		<table >
 			<tr>
 				<td>Name</td>
-				<td><input type="text" name="nachname"></td>
-				<td>Als favorit markieren 
+				<td><input type="text" name="name"></td>
+				<td>Als Favorit markieren 
 				<input  type="checkbox" name="favorit"/>
 				</td>
 			</tr>
@@ -33,7 +33,7 @@
 			</tr>
 			<tr>
 				<td>Coach</td>
-				<td><input type="text" name="coach"/></td>
+				<td><input type="text" name="hcoach"/></td>
 			</tr>
 			<tr>
 				<td>Assistentcoach</td>
@@ -54,7 +54,7 @@
 					<option value="center">Center</option>
 					<option value="guard">Guard</option>
 					<option value="powerForward">Power Forward</option>
-					<option value="wing">Wing</option>
+					<option selected value="wing">Wing</option>
 					<option value="smallForward">Small Forward</option>
 				</select></td>	
 			</tr>
@@ -67,13 +67,67 @@
 					checked="checked">Nein</input>
 				</td>	
 			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-			</tr>
+			
+			
 		</table>
-		<input type="submit" name="senden" value="senden"/>
+		<button id="los" type="submit"> Senden </button>
 	</form>
 	</div>
+	
+	<script type="text/javascript">
+	
+	var elem= document.getElementById('los');
+	elem.addEventListener('click',validateForm);
+	
+	var textF = new Array("name","vorname","verein","hcoach","acoach");
+	var fehler= new Array(false,false,false,false,false,false,false);
+	
+	function validateForm(){
+	 for(var i=0; i < textF.length; i++){
+		if (onlyLetters(document.forms["sendIt"][textF[i]].value) == false){
+			fehler[i]=true;
+		}
+	 }
+	 if (backNumber(document.forms["sendIt"]["number"].value) ==false){
+		fehler[6]=true;
+	 }
+	if (birthDate(document.forms["sendIt"]["jahr"].value) ==false){
+		fehler[7]=true;
+	}
+	
+	alert("hallo");
+	return false;
+	
+	}
+	
+	function onlyLetters(){
+	return true;
+	}
+	
+	function backNumber(a){
+	if (typeof(a)!="number"){
+		return false;
+	}else if (a < 4 || a > 15){
+		return false;
+		}
+
+	return true;
+	}
+	
+	function birthDate(b){
+	if (typeof(a)!="number"){
+		return false;
+	}else if (a < 0  || a > 2015){
+		return false;
+		}
+
+	return true;
+	}
+	
+	
+
+
+    
+	</script>
 </body>
 <html>
