@@ -1,134 +1,62 @@
 <DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/basicStyle.css"/>
+	<link rel="stylesheet" type="text/css" href="css/stylePlayerEntry.css"/>
 	<title>Spieler anlegen</title>
-	<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
-
 <head>
 <body>
-	<div class="left" id="side">
-	
-	</div>
-	<div class="right" id="side">
-		
-	</div>
 	<div class="middle">
-	<h2 id="playerHeader">Spieler anlegen</h2>
-	<form name"sendIt" action="http://martinakraus.net/createPlayer.php" method="GET">
-		<table >
-			<tr>
-				<td>Name</td>
-				<td><input id="n_name" type="text" name="name"></td>
-				<td>Als Favorit markieren 
-				<input  type="checkbox" name="favorit"/>
-				</td>
-			</tr>
-			<tr>
-				<td>Vorname</td>
-				<td><input id="v_name" type="text" name="vorname"/></td>
-			</tr>
-			<tr>
-				<td>Verein</td>
-				<td><input id="v_verein" type="text" name="verein"/></td>	
-			</tr>
-			<tr>
-				<td>Coach</td>
-				<td><input id="h_coach" type="text" name="hcoach"/></td>
-			</tr>
-			<tr>
-				<td>Assistentcoach</td>
-				<td><input id="a_coach" type="text" name="acoach"/></td>	
-			</tr>
-			<tr>
-				<td>Trikotnummer</td>
-				<td><input id="tnum" type="number" name="number"></td>
-			</tr>
-			<tr>
-				<td>Jahrgang</td>
-				<td><input id="ynum" type="number" name="jahr"></td>
-			</tr>
-			<tr>
-				<td>Position</td>
-				<td><!-- Dropdown -->
-				<select name="position" size="1">
-					<option value="center">Center</option>
-					<option value="guard">Guard</option>
-					<option value="powerForward">Power Forward</option>
-					<option selected value="wing">Wing</option>
-					<option value="smallForward">Small Forward</option>
-				</select></td>	
-			</tr>
-			<tr>
-				<td>Aktiv</td>
-				<td>
-					<input type="checkbox" name="aktiv" value="Ja">
-					Ja</input>
-					<input type="checkbox" name="aktiv" value="Nein" 
-					checked="checked">Nein</input>
-				</td>	
-			</tr>
+	<a href="home.html">Startseite</a>
+	<h1 id="playerHeader">Spieler anlegen</h1>
+	<form action="http://martinakraus.net/createPlayer.php" method="GET">
+		
+		<div id="player_left">
+			<label for="name" >Name</label>
+			<input id="name" type="text" name="name"/></br>
 			
+			<label for="vorname" >Vorname</label>
+			<input id="vorname" type="text" name="vorname"/></br>
 			
-		</table>
-		<button id="los" type="submit"> Senden </button>
+			<label for="verein" >Verein</label>
+			<input id="verein" type="text" name="verein"/></br>
+		
+			<label for="hcoach" >Coach</label>
+			<input id="hcoach" type="text" name="hcoach"/></br>
+			
+			<label for="acoach" >Assistentcoach</label>
+			<input id="acoach" type="text" name="acoach"/></br>
+			
+			<label for="number" >Trikotnummer</label>
+			<input id="number" type="number" name="number"></br>
+			
+			<label for="jahr" >Jahrgang</label>
+			<input id="ja" type="number" name="jahr"></br>
+		
+			<label for="position" >Position</label>
+			<select name="position" size="1">
+					<option value="Center">Center</option>
+					<option value="Guard">Guard</option>
+					<option value="PowerForward">Power Forward</option>
+					<option value="Wing">Wing</option>
+					<option value="SmallForward">Small Forward</option>
+			</select></br>
+			
+			<label for="aktiv" >Aktiv</label>
+			<input class="aktiv" type="checkbox" name="aktiv" value="Ja">Ja</input>
+			<input class="aktiv" type="checkbox" name="aktiv" value="Nein" 
+			checked="checked">Nein</input></br>	
+			<input type="submit" name="absenden" value="Absenden" />
+		</div>
+		
+		<div id="player_right">
+			Als Favorit markieren</br>
+			<input  type="checkbox" name="favorit" value="ja"/>
+		</div>
 	</form>
+	
 	</div>
 	
-	<script type="text/javascript">
-	
-	los.addEventListener('click',validateForm);
-	
-	var textF = new Array("n_name","v_name","v_verein","h_coach","a_coach");
-	var fehler= new Array(false,false,false,false,false,false,false);
-	
-	function validateForm(){
-		for(var i = 0;i < textF.length ; i++){
-			if (onlyLetters(document.getElementById(textF[i]).value) == false){
-				fehler[i]=true;
-			}
-		}
-		n_name.setAttribute("value","marcel");
-		if (backNumber(document.getElementById("tnum").value) ==false){
-			fehler[6]=true;
-		}
-		if (birthDate(document.getElementById("ynum").value) ==false){
-			fehler[7]=true;
-		}
-		
-	alert("hallo");
-	
-	return false;
-	
-	}
-	
-	function onlyLetters(){
-	return true;
-	}
-	
-	function backNumber(a){
-	if (typeof(a)!="number"){
-		return false;
-	}else if (a < 4 || a > 15){
-		return false;
-		}
-
-	return true;
-	}
-	
-	function birthDate(b){
-	if (typeof(a)!="number"){
-		return false;
-	}else if (a < 0  || a > 2015){
-		return false;
-		}
-
-	return true;
-	}
-	
-	
-
-
-    
-	</script>
 </body>
 <html>
