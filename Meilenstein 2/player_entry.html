@@ -18,34 +18,34 @@
 		<table >
 			<tr>
 				<td>Name</td>
-				<td><input type="text" name="name"></td>
+				<td><input id="n_name" type="text" name="name"></td>
 				<td>Als Favorit markieren 
 				<input  type="checkbox" name="favorit"/>
 				</td>
 			</tr>
 			<tr>
 				<td>Vorname</td>
-				<td><input type="text" name="vorname"/></td>
+				<td><input id="v_name" type="text" name="vorname"/></td>
 			</tr>
 			<tr>
 				<td>Verein</td>
-				<td><input type="text" name="verein"/></td>	
+				<td><input id="v_verein" type="text" name="verein"/></td>	
 			</tr>
 			<tr>
 				<td>Coach</td>
-				<td><input type="text" name="hcoach"/></td>
+				<td><input id="h_coach" type="text" name="hcoach"/></td>
 			</tr>
 			<tr>
 				<td>Assistentcoach</td>
-				<td><input type="text" name="acoach"/></td>	
+				<td><input id="a_coach" type="text" name="acoach"/></td>	
 			</tr>
 			<tr>
 				<td>Trikotnummer</td>
-				<td><input type="number" name="number"></td>
+				<td><input id="tnum" type="number" name="number"></td>
 			</tr>
 			<tr>
 				<td>Jahrgang</td>
-				<td><input type="number" name="jahr"></td>
+				<td><input id="ynum" type="number" name="jahr"></td>
 			</tr>
 			<tr>
 				<td>Position</td>
@@ -76,26 +76,27 @@
 	
 	<script type="text/javascript">
 	
-	var elem= document.getElementById('los');
-	elem.addEventListener('click',validateForm);
+	los.addEventListener('click',validateForm);
 	
-	var textF = new Array("name","vorname","verein","hcoach","acoach");
+	var textF = new Array("n_name","v_name","v_verein","h_coach","a_coach");
 	var fehler= new Array(false,false,false,false,false,false,false);
 	
 	function validateForm(){
-	 for(var i=0; i < textF.length; i++){
-		if (onlyLetters(document.forms["sendIt"][textF[i]].value) == false){
-			fehler[i]=true;
+		for(var i = 0;i < textF.length ; i++){
+			if (onlyLetters(document.getElementById(textF[i]).value) == false){
+				fehler[i]=true;
+			}
 		}
-	 }
-	 if (backNumber(document.forms["sendIt"]["number"].value) ==false){
-		fehler[6]=true;
-	 }
-	if (birthDate(document.forms["sendIt"]["jahr"].value) ==false){
-		fehler[7]=true;
-	}
-	
+		n_name.setAttribute("value","marcel");
+		if (backNumber(document.getElementById("tnum").value) ==false){
+			fehler[6]=true;
+		}
+		if (birthDate(document.getElementById("ynum").value) ==false){
+			fehler[7]=true;
+		}
+		
 	alert("hallo");
+	
 	return false;
 	
 	}
