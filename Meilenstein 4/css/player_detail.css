@@ -1,0 +1,28 @@
+table,th,td{
+	border: 3px solid black;
+}
+
+table{
+	width:90%;
+	border-collapse: collapse;
+	margin-top: 50px;
+	margin-left: 40px;
+}
+
+
+
+h1{
+	font-size: 24px;
+	color: rgb(75,47,37);
+	text-align: center;
+	margin-top: 20px;
+}
+
+#my_favorites{
+	
+}
+
+#all_players{
+	background-color: rgb(0,38,255);
+	color: #FFFFFF;
+}

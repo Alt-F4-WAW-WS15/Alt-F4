@@ -1,0 +1,43 @@
+*{
+	font-size:16px;
+	font-weight:bold;
+}
+
+h1{
+	text-align: center;
+	font-size: 24px;
+	color: rgb(75,47,37);
+}
+
+#player_left{
+	float:left;
+	width: 50%;
+}
+
+#player_right{
+	float:right;
+	width:50%;
+}
+
+
+label{
+    float:left;
+    width:120px;
+    text-align:left;
+	padding-top:2px;
+	margin-left:20px;
+}
+
+input, select{
+    margin-bottom:15px;
+    width:120px;
+	margin-left:20px;
+}
+
+.aktiv{
+	width:30px;
+}
+
+#favorite_checkbox{
+	width:20px;
+}
