@@ -1,22 +1,22 @@
 <DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title>Spieler anzeigen</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/basicStyle.css"/>
 	<link rel="stylesheet" type="text/css" href="css/player_detail.css"/>
 	<script lang="javascript" style="text/javascript" src="javascript/player_detail.js"></script>
-	<script src="json/data.json"></script>
 <head>
-<body>
+<body onload="myFunction(1)">
 	<div class="middle" >
 		<a href="home.html">Startseite</a>
 		<h1>Meine Spieler</h1>
-		<table>
+		<table id="table">
 			<th onclick="myFunction(1)" id="all_players" colspan="4" >Meine Spieler</th>
 			<th onclick="myFunction(2)" id="my_favorites" colspan="4" >Meine Favoriten</th>
 			
 			<tr>
-				<td>Spieler</td>
+				<td id="id12" ><p></p>Spieler</td>
 				<td>Verein</td>
 				<td>Headcoach</td>
 				<td>Assistant</td>

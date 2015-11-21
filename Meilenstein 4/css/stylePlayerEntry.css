@@ -10,14 +10,11 @@ h1{
 }
 
 #player_left{
-	padding-top:70px;
 	float:left;
 	width: 50%;
 }
 
 #player_right{
-
-	padding-top:70px;
 	float:right;
 	width:50%;
 }
@@ -29,7 +26,6 @@ label{
     text-align:left;
 	padding-top:2px;
 	margin-left:20px;
-	
 }
 
 input, select{
