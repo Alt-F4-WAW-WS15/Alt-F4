@@ -35,17 +35,17 @@ function load(json, fav) {
 	for(var i = 0; i < json.length; i++) {
 		if (json[i].isFavorite || fav) {
 			var row = table.insertRow(2);
-			var html = "<td>"+json[i].firstname+" "+json[i].surname+"</td>";
-			html += "<td>"+json[i].team+"</td>";
-			html += "<td>"+json[i].headcoach+"</td>";
-			html += "<td>"+json[i].asisstantcoach+"</td>";
-			html += "<td>"+json[i].position+"</td>";
+			var html = "<td class=entry>"+json[i].firstname+" "+json[i].surname+"</td>";
+			html += "<td class=entry>"+json[i].team+"</td>";
+			html += "<td class=entry>"+json[i].headcoach+"</td>";
+			html += "<td class=entry>"+json[i].asisstantcoach+"</td>";
+			html += "<td class=entry>"+json[i].position+"</td>";
 			if (json[i].isActive)
-				html += "<td>Ja</td>";
+				html += "<td class=entry>Ja</td>";
 			else
-				html += "<td>Nein</td>"
-			html += "<td>"+json[i].number+"</td>";
-			html += "<td>"+json[i].year+"</td>";
+				html += "<td class=entry>Nein</td>"
+			html += "<td class=entry>"+json[i].number+"</td>";
+			html += "<td class=entry>"+json[i].year+"</td>";
 			row.innerHTML = html;
 		}
 	}
