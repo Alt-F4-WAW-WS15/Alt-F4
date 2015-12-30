@@ -1,0 +1,40 @@
+table,th,td{
+	border: 3px solid black;
+	font-weight:bold;
+}
+
+table{
+	width:95%;
+	border-collapse: collapse;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#all_players{
+	font-size: 20px;
+	width: 50%;
+}
+#my_favorites{
+	font-size: 20px;
+	width:50%;
+}
+
+td{
+	font-size:14px;
+	width:12.5%;
+	text-align:center;
+	
+}
+
+h1{
+	font-size: 24px;
+	color: rgb(75,47,37);
+	text-align: center;
+	margin-top: 20px;
+}
+
+.entry{
+	font-size: 12px;
+}
+
