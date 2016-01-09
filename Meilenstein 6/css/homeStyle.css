@@ -1,0 +1,36 @@
+#spieler:hover,#favorit:hover,#reg:hover{
+	background-color: rgb(63,72,203);
+}
+#spieler,#favorit,#reg{
+	background-color: rgb(0,163,232);
+}
+a{
+	text-decoration: none;
+	color: black;
+	size: 18px;
+	font-weight:bold;
+	text-align:center;
+}
+
+h1{
+	font-size: 22px;
+	text-align: center;
+}
+
+.headingHome{
+	color: rgb(136,0,21);
+}
+
+img{
+	display:block;
+	margin: auto;
+	margin-top:50px;
+}
+
+.menu{
+	width: 15%;
+	margin: auto;
+	border-style: solid;
+	border-color: rgb(63,72,204);
+	margin-top: 50px;
+}
