@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -6,12 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="css/stylePlayerEntry.css"/>
 	<script lang="javascript" style="text/javascript" src="javascript/player.js"></script>
 	<title>Spieler anlegen</title>
-<head>
+</head>
 <body>
 	<div class="middle">
 	<a href="home.html">Startseite</a>
 	<h1 id="playerHeader">Spieler anlegen</h1>
-	<form action="http://localhost:3000/Player" method="GET" onsubmit="return myFunction()">
+	<form >
 		
 		<div id="player_left">
 			<label for="name" >Name</label>
@@ -36,7 +36,7 @@
 			<input id="ja" type="number" name="jahr"></br>
 		
 			<label for="position" >Position</label>
-			<select name="position" size="1">
+			<select id="position" name="position" size="1">
 					<option value="Center">Center</option>
 					<option value="Guard">Guard</option>
 					<option value="PowerForward">Power Forward</option>
@@ -48,7 +48,7 @@
 			<input class="aktiv" type="checkbox" name="aktiv" value="Ja">Ja</input>
 			<input class="aktiv" type="checkbox" name="aktiv" value="Nein" 
 			checked="checked">Nein</input></br>	
-			<input type="submit" name="absenden" value="Absenden" />
+			<button type='button' onclick="myFunction()"> Button </button>
 		</div>
 		
 		<div id="player_right">
@@ -60,4 +60,4 @@
 	</div>
 	
 </body>
-<html>
+</html>

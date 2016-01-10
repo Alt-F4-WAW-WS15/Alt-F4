@@ -9,6 +9,7 @@ var url = 'http://localhost:3000/Player';
 var focusIsSet = false;
 
 function myFunction() {
+    console.log('works');
     var isCorrect = false;
     focusIsSet = false;
     var arr = ["name", "vorname", "verein", "hcoach", "acoach"];
@@ -66,6 +67,31 @@ function myFunction() {
 
     if (!isCorrect) {
         alert("Einige Eingaben sind fehlerhaft. Bitte überprüfen Sie ihre Eingaben");
+    }else{
+        var object = getValues();
+        console.log(object);
+        var xhttp = new XMLHttpRequest();  
+        xhttp.onreadystatechange = function requestReadyStateHandeler(){
+          if(xhttp.readyState == 4 && xhttp.status == 200){
+           console.log(xhttp.responseText);   
+          }
+        };
+        xhttp.open("PUT", 'http://localhost:3000/Player', true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send(JSON.stringify(object));
     }
     return isCorrect;
+}
+
+function getValues(){
+    var jsonObject = { 
+        'vorname':  document.getElementById('vorname').value,
+        'name':     document.getElementById('name').value,
+        'jahr':     document.getElementById('ja').value,
+        'hcoach':   document.getElementById('hcoach').value,
+        'acoach':   document.getElementById('acoach').value,
+        'position': document.getElementById('position').value,
+        'number':   document.getElementById('number').value
+    };
+    return jsonObject;
 }
