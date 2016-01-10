@@ -2,3 +2,5 @@ a a 10 a z SmallForward 10
 a a 10 a z SmallForward 10
 a a 10 a z SmallForward 10
 a a 10 a z SmallForward 10
+brenner Jonathan 10 Müller Meier Wing 10
+maulwurf heuser 6 donald Bart Wing 4
